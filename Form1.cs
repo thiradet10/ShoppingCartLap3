@@ -71,5 +71,10 @@ namespace ShoppingCartLap3
         {
 
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
