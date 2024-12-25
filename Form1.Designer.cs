@@ -37,16 +37,16 @@
             btCheckOut = new Button();
             tbCoffeeQuantity = new TextBox();
             tbGreeTeaQuantity = new TextBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
+            tbCash = new TextBox();
+            tbChange = new TextBox();
+            tb1000 = new TextBox();
+            tb500 = new TextBox();
+            tb100 = new TextBox();
+            tb50 = new TextBox();
+            tb20 = new TextBox();
+            tb10 = new TextBox();
+            tb5 = new TextBox();
+            tb1 = new TextBox();
             Cash = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -136,76 +136,77 @@
             tbGreeTeaQuantity.Size = new Size(125, 27);
             tbGreeTeaQuantity.TabIndex = 8;
             // 
-            // textBox1
+            // tbCash
             // 
-            textBox1.Location = new Point(833, 98);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 9;
+            tbCash.Location = new Point(833, 98);
+            tbCash.Name = "tbCash";
+            tbCash.Size = new Size(125, 27);
+            tbCash.TabIndex = 9;
             // 
-            // textBox2
+            // tbChange
             // 
-            textBox2.Location = new Point(833, 131);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 10;
+            tbChange.Location = new Point(833, 131);
+            tbChange.Name = "tbChange";
+            tbChange.Size = new Size(125, 27);
+            tbChange.TabIndex = 10;
+            tbChange.TextChanged += tbChange_TextChanged;
             // 
-            // textBox3
+            // tb1000
             // 
-            textBox3.Location = new Point(833, 164);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 11;
-            textBox3.TextChanged += textBox3_TextChanged;
+            tb1000.Location = new Point(833, 164);
+            tb1000.Name = "tb1000";
+            tb1000.Size = new Size(125, 27);
+            tb1000.TabIndex = 11;
+            tb1000.TextChanged += textBox3_TextChanged;
             // 
-            // textBox4
+            // tb500
             // 
-            textBox4.Location = new Point(833, 197);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 12;
+            tb500.Location = new Point(833, 197);
+            tb500.Name = "tb500";
+            tb500.Size = new Size(125, 27);
+            tb500.TabIndex = 12;
             // 
-            // textBox5
+            // tb100
             // 
-            textBox5.Location = new Point(833, 230);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 13;
+            tb100.Location = new Point(833, 230);
+            tb100.Name = "tb100";
+            tb100.Size = new Size(125, 27);
+            tb100.TabIndex = 13;
             // 
-            // textBox6
+            // tb50
             // 
-            textBox6.Location = new Point(833, 263);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 27);
-            textBox6.TabIndex = 14;
+            tb50.Location = new Point(833, 263);
+            tb50.Name = "tb50";
+            tb50.Size = new Size(125, 27);
+            tb50.TabIndex = 14;
             // 
-            // textBox7
+            // tb20
             // 
-            textBox7.Location = new Point(833, 296);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(125, 27);
-            textBox7.TabIndex = 15;
+            tb20.Location = new Point(833, 296);
+            tb20.Name = "tb20";
+            tb20.Size = new Size(125, 27);
+            tb20.TabIndex = 15;
             // 
-            // textBox8
+            // tb10
             // 
-            textBox8.Location = new Point(833, 329);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(125, 27);
-            textBox8.TabIndex = 16;
+            tb10.Location = new Point(833, 329);
+            tb10.Name = "tb10";
+            tb10.Size = new Size(125, 27);
+            tb10.TabIndex = 16;
             // 
-            // textBox9
+            // tb5
             // 
-            textBox9.Location = new Point(833, 362);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(125, 27);
-            textBox9.TabIndex = 17;
+            tb5.Location = new Point(833, 362);
+            tb5.Name = "tb5";
+            tb5.Size = new Size(125, 27);
+            tb5.TabIndex = 17;
             // 
-            // textBox10
+            // tb1
             // 
-            textBox10.Location = new Point(833, 395);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(125, 27);
-            textBox10.TabIndex = 18;
+            tb1.Location = new Point(833, 395);
+            tb1.Name = "tb1";
+            tb1.Size = new Size(125, 27);
+            tb1.TabIndex = 18;
             // 
             // Cash
             // 
@@ -312,16 +313,16 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(Cash);
-            Controls.Add(textBox10);
-            Controls.Add(textBox9);
-            Controls.Add(textBox8);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tb1);
+            Controls.Add(tb5);
+            Controls.Add(tb10);
+            Controls.Add(tb20);
+            Controls.Add(tb50);
+            Controls.Add(tb100);
+            Controls.Add(tb500);
+            Controls.Add(tb1000);
+            Controls.Add(tbChange);
+            Controls.Add(tbCash);
             Controls.Add(tbGreeTeaQuantity);
             Controls.Add(tbCoffeeQuantity);
             Controls.Add(btCheckOut);
@@ -349,16 +350,16 @@
         private Button btCheckOut;
         private TextBox tbCoffeeQuantity;
         private TextBox tbGreeTeaQuantity;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
+        private TextBox tbCash;
+        private TextBox tbChange;
+        private TextBox tb1000;
+        private TextBox tb500;
+        private TextBox tb100;
+        private TextBox tb50;
+        private TextBox tb20;
+        private TextBox tb10;
+        private TextBox tb5;
+        private TextBox tb1;
         private Label Cash;
         private Label label2;
         private Label label3;

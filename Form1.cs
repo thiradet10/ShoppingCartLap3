@@ -19,6 +19,7 @@ namespace ShoppingCartLap3
 
         private void btCheckOut_Click(object sender, EventArgs e)
         {
+            string strCash = tbCash.Text;
             //get amount
             string strCoffeePrice = tbCoffeePrice.Text;
             string strGreeTeaPrice = tbGreeTeaPrice.Text;
@@ -27,22 +28,24 @@ namespace ShoppingCartLap3
             string strCoffeeQuantity = tbCoffeeQuantity.Text;
             string strGreeTeaQuantity = tbGreeTeaQuantity.Text;
 
-            double iCoffeePrice = 0;
-            double iGreeTeaPrice = 0;
-            double iCoffeeQuantity = 0;
-            double iGreeTeaQuantity = 0;
+            int iCoffeePrice = 0;
+            int iGreeTeaPrice = 0;
+            int iCoffeeQuantity = 0;
+            int iGreeTeaQuantity = 0;
+            int iCash = 0; 
             try
             {
                 //convert string to ing
+                iCash = int.Parse(strCash);
                 if (chbCoffee.Checked)
                 {
-                    iCoffeePrice = double.Parse(strCoffeePrice);
-                    iCoffeeQuantity = double.Parse(strCoffeeQuantity);
+                    iCoffeePrice = int.Parse(strCoffeePrice);
+                    iCoffeeQuantity = int.Parse(strCoffeeQuantity);
                 }
                 if (chbGreetea.Checked)
                 {
-                    iGreeTeaPrice = double.Parse(strGreeTeaPrice);
-                    iGreeTeaQuantity = double.Parse(strGreeTeaQuantity);
+                    iGreeTeaPrice = int.Parse(strGreeTeaPrice);
+                    iGreeTeaQuantity = int.Parse(strGreeTeaQuantity);
                 }
             }
             catch (Exception ex)
@@ -51,16 +54,40 @@ namespace ShoppingCartLap3
                 iGreeTeaPrice = 0;
                 iCoffeeQuantity = 0;
                 iGreeTeaQuantity = 0;
+                iCash = 0;
             }
             //calculate total
-            double iCoffee = iCoffeePrice * iCoffeeQuantity;
-            double iGreeTea = iGreeTeaPrice * iGreeTeaQuantity;
-            double iTotal = iCoffee + iGreeTea;
+            int iCoffee = iCoffeePrice * iCoffeeQuantity;
+            int iGreeTea = iGreeTeaPrice * iGreeTeaQuantity;
+            int iTotal = iCoffee + iGreeTea;
+            int iChange = iCash - iTotal;
 
             //display totall
             tbTotal.Text = iTotal.ToString();
+            tbChange.Text = iChange.ToString();
 
+            int[] denominations = { 1000, 500, 100, 50, 20, 10, 5, 1 };
+            int[] changeCount = new int[denominations.Length];
+            int remainingChange = iChange;
+
+            for (int i = 0; i < denominations.Length; i++)
+            {
+                changeCount[i] = remainingChange / denominations[i];
+                remainingChange %= denominations[i];
+            }
+
+
+            tb1000.Text = changeCount[0].ToString();
+            tb500.Text = changeCount[1].ToString();
+            tb100.Text = changeCount[2].ToString();
+            tb50.Text = changeCount[3].ToString();
+            tb20.Text = changeCount[4].ToString();
+            tb10.Text = changeCount[5].ToString();
+            tb5.Text = changeCount[6].ToString();
+            tb1.Text = changeCount[7].ToString();
         }
+
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -75,6 +102,11 @@ namespace ShoppingCartLap3
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbChange_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
