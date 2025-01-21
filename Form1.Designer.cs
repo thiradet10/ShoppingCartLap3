@@ -90,9 +90,10 @@
             tbCoffeePrice.ForeColor = Color.Black;
             tbCoffeePrice.Location = new Point(147, 26);
             tbCoffeePrice.Name = "tbCoffeePrice";
+            tbCoffeePrice.ReadOnly = true;
             tbCoffeePrice.Size = new Size(131, 27);
             tbCoffeePrice.TabIndex = 0;
-            tbCoffeePrice.TextChanged += tbCoffeePrice_TextChanged;
+
             // 
             // chbCoffee
             // 
@@ -104,6 +105,7 @@
             chbCoffee.TabIndex = 1;
             chbCoffee.Text = "Coffee";
             chbCoffee.UseVisualStyleBackColor = true;
+            chbCoffee.CheckedChanged += chbCoffee_CheckedChanged;
             // 
             // chbGreetea
             // 
@@ -115,14 +117,15 @@
             chbGreetea.TabIndex = 2;
             chbGreetea.Text = "Gree Tea";
             chbGreetea.UseVisualStyleBackColor = true;
+            chbGreetea.CheckedChanged += chbGreetea_CheckedChanged;
             // 
             // tbGreeTeaPrice
             // 
             tbGreeTeaPrice.Location = new Point(147, 59);
             tbGreeTeaPrice.Name = "tbGreeTeaPrice";
+            tbGreeTeaPrice.ReadOnly = true;
             tbGreeTeaPrice.Size = new Size(130, 27);
             tbGreeTeaPrice.TabIndex = 3;
-            tbGreeTeaPrice.TextChanged += tbGreeTeaPrice_TextChanged;
             // 
             // Total
             // 
@@ -132,7 +135,6 @@
             Total.Size = new Size(43, 20);
             Total.TabIndex = 4;
             Total.Text = "Total";
-            Total.Click += label1_Click;
             // 
             // tbTotal
             // 
@@ -140,7 +142,6 @@
             tbTotal.Name = "tbTotal";
             tbTotal.Size = new Size(125, 27);
             tbTotal.TabIndex = 5;
-            tbTotal.TextChanged += tbTotal_TextChanged;
             // 
             // btCheckOut
             // 
@@ -180,7 +181,6 @@
             tbChange.Name = "tbChange";
             tbChange.Size = new Size(125, 27);
             tbChange.TabIndex = 10;
-            tbChange.TextChanged += tbChange_TextChanged;
             // 
             // tb1000
             // 
@@ -188,7 +188,6 @@
             tb1000.Name = "tb1000";
             tb1000.Size = new Size(125, 27);
             tb1000.TabIndex = 11;
-            tb1000.TextChanged += textBox3_TextChanged;
             // 
             // tb500
             // 
@@ -238,7 +237,6 @@
             tb1.Name = "tb1";
             tb1.Size = new Size(125, 27);
             tb1.TabIndex = 18;
-            tb1.TextChanged += tb1_TextChanged;
             // 
             // Cash
             // 
@@ -378,6 +376,7 @@
             chbNoodle.TabIndex = 1;
             chbNoodle.Text = "Noodle";
             chbNoodle.UseVisualStyleBackColor = true;
+            chbNoodle.CheckedChanged += chbNoodle_CheckedChanged;
             // 
             // chbPizza
             // 
@@ -389,6 +388,7 @@
             chbPizza.TabIndex = 2;
             chbPizza.Text = "Pizza";
             chbPizza.UseVisualStyleBackColor = true;
+            chbPizza.CheckedChanged += chbPizza_CheckedChanged;
             // 
             // tbNoodlePrice
             // 
@@ -396,6 +396,7 @@
             tbNoodlePrice.ForeColor = Color.Black;
             tbNoodlePrice.Location = new Point(147, 26);
             tbNoodlePrice.Name = "tbNoodlePrice";
+            tbNoodlePrice.ReadOnly = true;
             tbNoodlePrice.Size = new Size(131, 27);
             tbNoodlePrice.TabIndex = 0;
             // 
@@ -403,6 +404,7 @@
             // 
             tbPizzaPrice.Location = new Point(147, 59);
             tbPizzaPrice.Name = "tbPizzaPrice";
+            tbPizzaPrice.ReadOnly = true;
             tbPizzaPrice.Size = new Size(130, 27);
             tbPizzaPrice.TabIndex = 3;
             // 
@@ -437,7 +439,6 @@
             chbDiscount.TabIndex = 31;
             chbDiscount.TabStop = false;
             chbDiscount.Text = "Discount";
-            chbDiscount.Enter += groupBox3_Enter;
             // 
             // label12
             // 
@@ -456,7 +457,6 @@
             label11.Size = new Size(21, 20);
             label11.TabIndex = 12;
             label11.Text = "%";
-            label11.Click += label11_Click;
             // 
             // label1
             // 
@@ -495,7 +495,6 @@
             chbDiscountAll.TabIndex = 1;
             chbDiscountAll.Text = "All";
             chbDiscountAll.UseVisualStyleBackColor = true;
-            chbDiscountAll.CheckedChanged += checkBox3_CheckedChanged;
             // 
             // chbDiscountBeverage
             // 
@@ -514,7 +513,6 @@
             tbDiscountAll.Name = "tbDiscountAll";
             tbDiscountAll.Size = new Size(125, 27);
             tbDiscountAll.TabIndex = 7;
-            tbDiscountAll.TextChanged += tbDiscountAll_TextChanged;
             // 
             // tbDiscountBeverage
             // 
@@ -594,7 +592,6 @@
             Controls.Add(Total);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             chbBeverage.ResumeLayout(false);
             chbBeverage.PerformLayout();
             chybFood.ResumeLayout(false);

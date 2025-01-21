@@ -2,19 +2,50 @@ namespace ShoppingCartLap3
 {
     public partial class Form1 : Form
     {
+        Item itemCoffee = new Item();
+        Item itemGreeTea = new Item();
+        Item itemNoodle = new Item();
+        Item itemPizza = new Item();
         public Form1()
         {
+            // add data to object
             InitializeComponent();
-        }
-        
+            itemCoffee.name = "coffee";
+            itemCoffee.price = 60;
+            itemCoffee.quantity = 0;
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+            itemGreeTea.name = "GreeTea";
+            itemGreeTea.price = 50;
+            itemGreeTea.quantity = 0;
 
-        }
+            itemNoodle.name = "Noodle";
+            itemNoodle.price = 100;
+            itemNoodle.quantity = 0;
 
-        private void tbCoffeePrice_TextChanged(object sender, EventArgs e)
-        {
+            itemPizza.name = "Pizza";
+            itemPizza.price = 159;
+            itemPizza.quantity = 0;
+
+            // dispiay data
+            tbCoffeePrice.Text =
+                itemCoffee.price.ToString();
+            tbCoffeeQuantity.Text =
+                itemCoffee.quantity.ToString();
+
+            tbGreeTeaPrice.Text =
+                itemGreeTea.price.ToString();
+            tbGreeTeaQuantity.Text =
+                itemGreeTea.quantity.ToString();
+
+            tbNoodlePrice.Text =
+                itemNoodle.price.ToString();
+            tbNoodleQuantity.Text =
+                itemNoodle.quantity.ToString();
+
+            tbPizzaPrice.Text =
+                itemPizza.price.ToString();
+            tbPizzaQuantity.Text =
+                itemPizza.quantity.ToString();
 
         }
 
@@ -27,19 +58,19 @@ namespace ShoppingCartLap3
                 double dBeverageTotal = 0;
                 double dFoodTotal = 0;
 
-                if (chbCoffee.Checked)
+                if (itemCoffee.isCheck) ;
                 {
                     dBeverageTotal += GetItemTotal(tbCoffeePrice.Text, tbCoffeeQuantity.Text);
                 }
-                if (chbGreetea.Checked)
+                if (itemGreeTea.isCheck)
                 {
                     dBeverageTotal += GetItemTotal(tbGreeTeaPrice.Text, tbGreeTeaQuantity.Text);
                 }
-                if (chbNoodle.Checked)
+                if (itemNoodle.isCheck)
                 {
                     dFoodTotal += GetItemTotal(tbNoodlePrice.Text, tbNoodleQuantity.Text);
                 }
-                if (chbPizza.Checked)
+                if (itemPizza.isCheck)
                 {
                     dFoodTotal += GetItemTotal(tbPizzaPrice.Text, tbPizzaQuantity.Text);
                 }
@@ -68,6 +99,7 @@ namespace ShoppingCartLap3
         }
         private double GetItemTotal(string priceText, string quantityText)
         {
+
             double price = 0, quantity = 0;
             try
             {
@@ -115,69 +147,24 @@ namespace ShoppingCartLap3
             tb025.Text = changeCount[9].ToString();
         }
 
-
-
-
-
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void chbCoffee_CheckedChanged(object sender, EventArgs e)
         {
-
+            itemCoffee.isCheck = chbCoffee.Checked;
         }
 
-        private void tbTotal_TextChanged(object sender, EventArgs e)
+        private void chbGreetea_CheckedChanged(object sender, EventArgs e)
         {
-
+            itemGreeTea.isCheck = chbGreetea.Checked;
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void chbNoodle_CheckedChanged(object sender, EventArgs e)
         {
-
+            itemNoodle.isCheck = chbNoodle.Checked;
         }
 
-        private void tbChange_TextChanged(object sender, EventArgs e)
+        private void chbPizza_CheckedChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbGreeTeaPrice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbDiscountAll_TextChanged(object sender, EventArgs e)
-        {
-
+            itemPizza.isCheck = chbPizza.Checked;
         }
     }
 }
