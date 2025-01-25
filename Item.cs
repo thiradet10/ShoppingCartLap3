@@ -6,13 +6,24 @@ using System.Threading.Tasks;
 
 namespace ShoppingCartLap3
 {
-    internal class Item
+    public class Item
     {
-        // Cass Informtion
-        public string name;
-        public int price;
-        public int quantity;
-        public bool isCheck;
-        public static Type;
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public int Quantity { get; set; }
+        public bool IsChecked { get; set; }
+
+
+        public double GetTotalPrice()
+        {
+            return Price * Quantity;
+        }
+
+
+        public double GetDiscount(double discountPercentage)
+        {
+            return GetTotalPrice() * (discountPercentage / 100);
+        }
     }
+
 }

@@ -6,46 +6,39 @@ namespace ShoppingCartLap3
         Item itemGreeTea = new Item();
         Item itemNoodle = new Item();
         Item itemPizza = new Item();
+
         public Form1()
         {
             // add data to object
             InitializeComponent();
-            itemCoffee.name = "coffee";
-            itemCoffee.price = 60;
-            itemCoffee.quantity = 0;
+            itemCoffee.Name = "coffee";
+            itemCoffee.Price = 60;
+            itemCoffee.Quantity = 0;
 
-            itemGreeTea.name = "GreeTea";
-            itemGreeTea.price = 50;
-            itemGreeTea.quantity = 0;
+            itemGreeTea.Name = "GreeTea";
+            itemGreeTea.Price = 50;
+            itemGreeTea.Quantity = 0;
 
-            itemNoodle.name = "Noodle";
-            itemNoodle.price = 100;
-            itemNoodle.quantity = 0;
+            itemNoodle.Name = "Noodle";
+            itemNoodle.Price = 100;
+            itemNoodle.Quantity = 0;
 
-            itemPizza.name = "Pizza";
-            itemPizza.price = 159;
-            itemPizza.quantity = 0;
+            itemPizza.Name = "Pizza";
+            itemPizza.Price = 159;
+            itemPizza.Quantity = 0;
 
             // dispiay data
-            tbCoffeePrice.Text =
-                itemCoffee.price.ToString();
-            tbCoffeeQuantity.Text =
-                itemCoffee.quantity.ToString();
+            tbCoffeePrice.Text = itemCoffee.Price.ToString();
+            tbCoffeeQuantity.Text =  itemCoffee.Quantity.ToString();
 
-            tbGreeTeaPrice.Text =
-                itemGreeTea.price.ToString();
-            tbGreeTeaQuantity.Text =
-                itemGreeTea.quantity.ToString();
+            tbGreeTeaPrice.Text = itemGreeTea.Price.ToString();
+            tbGreeTeaQuantity.Text = itemGreeTea.Quantity.ToString();
 
-            tbNoodlePrice.Text =
-                itemNoodle.price.ToString();
-            tbNoodleQuantity.Text =
-                itemNoodle.quantity.ToString();
+            tbNoodlePrice.Text = itemNoodle.Price.ToString();
+            tbNoodleQuantity.Text = itemNoodle.Quantity.ToString();
 
-            tbPizzaPrice.Text =
-                itemPizza.price.ToString();
-            tbPizzaQuantity.Text =
-                itemPizza.quantity.ToString();
+            tbPizzaPrice.Text = itemPizza.Price.ToString();
+            tbPizzaQuantity.Text = itemPizza.Quantity.ToString();
 
         }
 
@@ -58,21 +51,25 @@ namespace ShoppingCartLap3
                 double dBeverageTotal = 0;
                 double dFoodTotal = 0;
 
-                if (itemCoffee.isCheck) ;
+                if (chbCoffee.Checked) 
                 {
-                    dBeverageTotal += GetItemTotal(tbCoffeePrice.Text, tbCoffeeQuantity.Text);
+                    itemCoffee.Quantity = int.Parse(tbCoffeeQuantity.Text);
+                    dBeverageTotal += itemCoffee.GetTotalPrice();
                 }
-                if (itemGreeTea.isCheck)
+                if (chbGreetea.Checked)
                 {
-                    dBeverageTotal += GetItemTotal(tbGreeTeaPrice.Text, tbGreeTeaQuantity.Text);
+                    itemGreeTea.Quantity = int.Parse(tbGreeTeaQuantity.Text);
+                    dBeverageTotal += itemGreeTea.GetTotalPrice();
                 }
-                if (itemNoodle.isCheck)
+                if (chbNoodle.Checked)
                 {
-                    dFoodTotal += GetItemTotal(tbNoodlePrice.Text, tbNoodleQuantity.Text);
+                    itemNoodle.Quantity = int.Parse(tbNoodleQuantity.Text);
+                    dFoodTotal += itemNoodle.GetTotalPrice();
                 }
-                if (itemPizza.isCheck)
+                if (chbPizza.Checked)
                 {
-                    dFoodTotal += GetItemTotal(tbPizzaPrice.Text, tbPizzaQuantity.Text);
+                    itemPizza.Quantity = int.Parse(tbPizzaQuantity.Text);
+                    dFoodTotal += itemPizza.GetTotalPrice();
                 }
                 double dGrandTotal = dBeverageTotal + dFoodTotal;
 
@@ -145,26 +142,6 @@ namespace ShoppingCartLap3
             tb1.Text = changeCount[7].ToString();
             tb050.Text = changeCount[8].ToString();
             tb025.Text = changeCount[9].ToString();
-        }
-
-        private void chbCoffee_CheckedChanged(object sender, EventArgs e)
-        {
-            itemCoffee.isCheck = chbCoffee.Checked;
-        }
-
-        private void chbGreetea_CheckedChanged(object sender, EventArgs e)
-        {
-            itemGreeTea.isCheck = chbGreetea.Checked;
-        }
-
-        private void chbNoodle_CheckedChanged(object sender, EventArgs e)
-        {
-            itemNoodle.isCheck = chbNoodle.Checked;
-        }
-
-        private void chbPizza_CheckedChanged(object sender, EventArgs e)
-        {
-            itemPizza.isCheck = chbPizza.Checked;
         }
     }
 }

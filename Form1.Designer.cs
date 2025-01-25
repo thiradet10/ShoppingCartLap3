@@ -93,7 +93,6 @@
             tbCoffeePrice.ReadOnly = true;
             tbCoffeePrice.Size = new Size(131, 27);
             tbCoffeePrice.TabIndex = 0;
-
             // 
             // chbCoffee
             // 
@@ -105,7 +104,6 @@
             chbCoffee.TabIndex = 1;
             chbCoffee.Text = "Coffee";
             chbCoffee.UseVisualStyleBackColor = true;
-            chbCoffee.CheckedChanged += chbCoffee_CheckedChanged;
             // 
             // chbGreetea
             // 
@@ -117,7 +115,6 @@
             chbGreetea.TabIndex = 2;
             chbGreetea.Text = "Gree Tea";
             chbGreetea.UseVisualStyleBackColor = true;
-            chbGreetea.CheckedChanged += chbGreetea_CheckedChanged;
             // 
             // tbGreeTeaPrice
             // 
@@ -130,7 +127,7 @@
             // Total
             // 
             Total.AutoSize = true;
-            Total.Location = new Point(765, 66);
+            Total.Location = new Point(765, 95);
             Total.Name = "Total";
             Total.Size = new Size(43, 20);
             Total.TabIndex = 4;
@@ -138,7 +135,7 @@
             // 
             // tbTotal
             // 
-            tbTotal.Location = new Point(830, 59);
+            tbTotal.Location = new Point(830, 92);
             tbTotal.Name = "tbTotal";
             tbTotal.Size = new Size(125, 27);
             tbTotal.TabIndex = 5;
@@ -170,7 +167,7 @@
             // 
             // tbCash
             // 
-            tbCash.Location = new Point(830, 92);
+            tbCash.Location = new Point(830, 59);
             tbCash.Name = "tbCash";
             tbCash.Size = new Size(125, 27);
             tbCash.TabIndex = 9;
@@ -241,7 +238,7 @@
             // Cash
             // 
             Cash.AutoSize = true;
-            Cash.Location = new Point(765, 99);
+            Cash.Location = new Point(765, 62);
             Cash.Name = "Cash";
             Cash.Size = new Size(40, 20);
             Cash.TabIndex = 19;
@@ -341,9 +338,9 @@
             chbBeverage.Controls.Add(chbCoffee);
             chbBeverage.Controls.Add(chbGreetea);
             chbBeverage.Controls.Add(tbCoffeePrice);
-            chbBeverage.Controls.Add(tbGreeTeaPrice);
             chbBeverage.Controls.Add(tbCoffeeQuantity);
             chbBeverage.Controls.Add(tbGreeTeaQuantity);
+            chbBeverage.Controls.Add(tbGreeTeaPrice);
             chbBeverage.Location = new Point(225, 62);
             chbBeverage.Name = "chbBeverage";
             chbBeverage.Size = new Size(409, 125);
@@ -376,7 +373,6 @@
             chbNoodle.TabIndex = 1;
             chbNoodle.Text = "Noodle";
             chbNoodle.UseVisualStyleBackColor = true;
-            chbNoodle.CheckedChanged += chbNoodle_CheckedChanged;
             // 
             // chbPizza
             // 
@@ -388,7 +384,6 @@
             chbPizza.TabIndex = 2;
             chbPizza.Text = "Pizza";
             chbPizza.UseVisualStyleBackColor = true;
-            chbPizza.CheckedChanged += chbPizza_CheckedChanged;
             // 
             // tbNoodlePrice
             // 
